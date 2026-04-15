@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-snow: #f8fafc;
+    --color-electric: #2563eb;
+    --color-ink: #0f172a;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-body);
+    background-color: var(--color-snow);
+    color: var(--color-ink);
+  }
+
+  body {
+    @apply bg-snow text-ink antialiased;
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  ::selection {
+    background-color: #2563eb;
+    color: #fff;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f8fafc;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2563eb;
+  }
+}
+
+@layer components {
+  .section-label {
+    @apply font-mono text-xs tracking-[0.25em] uppercase text-electric font-semibold;
+  }
+
+  .section-heading {
+    @apply font-display text-ink leading-tight;
+    font-size: clamp(2rem, 5vw, 4rem);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-electric text-white font-body font-semibold px-6 py-3 rounded-full transition-all duration-300;
+    @apply hover:bg-electric-dark hover:shadow-brutal-blue hover:-translate-y-0.5;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border-2 border-ink text-ink font-body font-semibold px-6 py-3 rounded-full transition-all duration-300;
+    @apply hover:bg-ink hover:text-snow hover:-translate-y-0.5;
+  }
+
+  .tech-badge {
+    @apply inline-flex items-center font-mono text-xs font-medium px-3 py-1 rounded-full border border-border bg-snow text-ink-muted;
+  }
+
+  .card-brutalist {
+    @apply bg-white border border-border rounded-2xl p-6 transition-all duration-300;
+    @apply hover:-translate-y-2 hover:shadow-card-hover hover:border-electric;
+  }
+
+  /* Terminal styles */
+  .terminal-window {
+    @apply bg-ink rounded-xl overflow-hidden;
+    font-family: var(--font-mono);
+  }
+
+  .terminal-bar {
+    @apply flex items-center gap-2 px-4 py-3 bg-ink-muted/30;
+  }
+
+  .terminal-dot {
+    @apply w-3 h-3 rounded-full;
+  }
+
+  .terminal-body {
+    @apply p-5 text-sm leading-relaxed;
+    font-family: var(--font-mono);
+  }
+}
+
+@layer utilities {
+  /* Responsive Layout Utilities */
+  .section-padding { @apply py-16 px-6 md:py-28 md:px-12; }
+  .brutal-shadow-sm { @apply shadow-[2px_2px_0px_#000]; }
+  .brutal-shadow { @apply shadow-[4px_4px_0px_#000] md:shadow-[8px_8px_0px_#000]; }
+
+  .text-gradient-electric {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .underline-brutal {
+    position: relative;
+    display: inline-block;
+  }
+
+  .underline-brutal::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-color: #2563eb;
+    z-index: -1;
+  }
+
+  .pill-scatter {
+    @apply inline-flex items-center justify-center rounded-full border-2 border-white text-white font-body font-semibold;
+    @apply whitespace-nowrap select-none;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+  }
+
+  .pill-scatter:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.05) !important;
+  }
+
+  @keyframes drift {
+    0%, 100% { transform: translate(0, 0) rotate(var(--rotate, 0deg)); }
+    25% { transform: translate(4px, -4px) rotate(calc(var(--rotate, 0deg) + 2deg)); }
+    50% { transform: translate(-2px, 6px) rotate(calc(var(--rotate, 0deg) - 1deg)); }
+    75% { transform: translate(-5px, -3px) rotate(calc(var(--rotate, 0deg) + 1deg)); }
+  }
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes scroll-line {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(200%); }
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 12s linear infinite;
+  }
+
+  .animate-marquee {
+    display: flex;
+    white-space: nowrap;
+    animation: marquee 20s linear infinite;
+  }
+
+  .animate-scroll-line {
+    animation: scroll-line 2s ease-in-out infinite;
+  }
+
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+
+  .animate-drift {
+    animation: drift 8s ease-in-out infinite;
+  }
+}

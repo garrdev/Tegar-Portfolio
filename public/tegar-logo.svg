@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="520" viewBox="0 0 500 520">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Chango&amp;display=swap');
+      .letter { font-family: 'Chango', 'Arial Black', sans-serif; font-size: 200px; fill: #f0ede6; }
+      .reg { font-family: 'Chango', 'Arial Black', sans-serif; font-size: 24px; fill: #111; }
+    </style>
+  </defs>
+
+  <!-- T block -->
+  <g transform="translate(75,10) rotate(-6,115,100)">
+    <rect x="15" y="10" width="200" height="185" rx="10" fill="#111"/>
+    <text x="115" y="170" text-anchor="middle" class="letter">T</text>
+  </g>
+
+  <!-- E block -->
+  <g transform="translate(225,0) rotate(7,115,100)">
+    <rect x="15" y="10" width="200" height="185" rx="10" fill="#111"/>
+    <text x="115" y="170" text-anchor="middle" class="letter">E</text>
+  </g>
+
+  <!-- G block -->
+  <g transform="translate(50,165) rotate(4,115,100)">
+    <rect x="15" y="10" width="200" height="185" rx="10" fill="#111"/>
+    <text x="115" y="170" text-anchor="middle" class="letter">G</text>
+  </g>
+
+  <!-- A block -->
+  <g transform="translate(245,160) rotate(-5,115,100)">
+    <rect x="15" y="10" width="200" height="185" rx="10" fill="#111"/>
+    <text x="115" y="170" text-anchor="middle" class="letter">A</text>
+  </g>
+
+  <!-- R block -->
+  <g transform="translate(145,325) rotate(3,115,100)">
+    <rect x="15" y="10" width="200" height="185" rx="10" fill="#111"/>
+    <text x="115" y="170" text-anchor="middle" class="letter">R</text>
+  </g>
+
+  <!-- Registered trademark circle -->
+  <circle cx="435" cy="38" r="28" fill="none" stroke="#111" stroke-width="7"/>
+  <text x="435" y="48" text-anchor="middle" class="reg">R</text>
+</svg>
