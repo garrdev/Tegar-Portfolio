@@ -3,6 +3,6 @@ export const environment = {
   contact: {
     email: 'tegarbayusaputraa@gmail.com',
     linkedin: 'www.linkedin.com/in/tegarbayusaputra',
-    whatsapp: '628XXXXXXXXXX' // Ganti dengan nomor WA kamu
+    whatsapp: '6285641302328'
   }
 };
