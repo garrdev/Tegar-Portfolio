@@ -16,22 +16,22 @@ export const translations = {
       greeting: "I'M TEGAR.",
       role: 'FRONT-END ENGINEER',
       subtitle:
-        'I build high-performance, pixel-perfect web applications with Angular & modern JS. Obsessed with clean code and beautiful UI.',
+        'I build scalable, production-ready web interfaces using Angular, React & TypeScript — and go full-stack with Laravel & MySQL when needed.',
       cta_projects: 'View Projects',
       cta_cv: 'Download CV',
       scroll_hint: 'Scroll to explore',
-      decorative_left: 'Focusing on clean code, robust architecture, and great user experiences.',
-      decorative_right: 'Specialized in building performant, scalable web applications with Angular & Tailwind CSS.',
+      decorative_left: 'Clean, reusable components. Type-safe code. Cross-browser compatibility.',
+      decorative_right: 'From agency internship to freelance — delivering scalable apps with Angular, React & Laravel.',
     },
     about: {
       label: 'About Me',
       heading: 'Crafting Digital\nExperiences',
       bio_p1:
-        'Hi! I\'m Tegar Bayu Saputra, a passionate Front-End Engineer based in Indonesia. I specialize in building scalable and maintainable web applications using Angular, TypeScript, and modern CSS frameworks.',
+        'Frontend Developer with experience architecting and delivering scalable, production-ready web interfaces using Angular, React, and TypeScript. Capable of working across the full stack when needed, with hands-on experience in PHP (Laravel) and MySQL for backend integration.',
       bio_p2:
-        'I care deeply about developer experience, performance budgets, and pixel-perfect execution. When I\'m not coding, you\'ll find me exploring new design systems or contributing to open source.',
+        'Progressed from foundational web development during an agency internship to independently building type-safe, modular applications for freelance clients. Skilled in writing clean, reusable code components, conducting code reviews, and ensuring cross-browser compatibility.',
       bio_p3:
-        'Currently focused on Angular v21 Signals, Zoneless architecture, and crafting exceptional user interfaces.',
+        'Proven ability to work autonomously in remote-first environments with strong written communication and consistent, on-time delivery.',
       terminal_title: 'Technical DNA',
     },
     projects: {
@@ -62,13 +62,19 @@ export const translations = {
       heading: "LET'S BUILD SOMETHING GREAT.",
       subheading: 'Open for opportunities and collaborations.',
       cta_email: 'Send an Email',
+      cta_whatsapp: 'WhatsApp Chat',
       cta_linkedin: 'Connect on LinkedIn',
     },
     footer: {
-      tagline: 'Building the web, one component at a time.',
+      tagline: 'Yogyakarta-based dev. Coffee-fueled. Ships clean code.',
       rights: 'All rights reserved.',
       nav_title: 'Navigation',
       built_with: 'Built With',
+      currently: {
+        title: 'CURRENTLY',
+        status: 'Open to work & collaborations',
+        location: 'Yogyakarta, ID (GMT+7)',
+      },
     },
   },
   ID: {
@@ -83,22 +89,22 @@ export const translations = {
       greeting: "AKU TEGAR.",
       role: 'FRONT-END ENGINEER',
       subtitle:
-        'Aku membangun aplikasi web berkinerja tinggi dan sempurna piksel dengan Angular & JavaScript modern. Terobsesi dengan kode bersih dan UI yang indah.',
+        'Aku membangun antarmuka web yang skalabel dan siap produksi menggunakan Angular, React & TypeScript — dan bisa full-stack dengan Laravel & MySQL saat dibutuhkan.',
       cta_projects: 'Lihat Proyek',
       cta_cv: 'Unduh CV',
       scroll_hint: 'Gulir untuk menjelajahi',
-      decorative_left: 'Berfokus pada kode yang bersih, arsitektur yang kuat, dan pengalaman pengguna yang luar biasa.',
-      decorative_right: 'Spesialis dalam membangun aplikasi web yang performa dan skalabel dengan Angular & Tailwind CSS.',
+      decorative_left: 'Komponen bersih dan reusable. Kode type-safe. Kompatibilitas lintas browser.',
+      decorative_right: 'Dari magang agency hingga freelance — menghadirkan aplikasi skalabel dengan Angular, React & Laravel.',
     },
     about: {
       label: 'Tentang Saya',
       heading: 'Merancang Pengalaman\nDigital',
       bio_p1:
-        'Halo! Saya Tegar Bayu Saputra, seorang Front-End Engineer yang bersemangat dan berbasis di Indonesia. Saya berspesialisasi dalam membangun aplikasi web yang skalabel menggunakan Angular, TypeScript, dan framework CSS modern.',
+        'Frontend Developer dengan pengalaman merancang dan menghadirkan antarmuka web yang skalabel dan siap produksi menggunakan Angular, React, dan TypeScript. Mampu bekerja lintas stack saat dibutuhkan, dengan pengalaman langsung di PHP (Laravel) dan MySQL untuk integrasi backend.',
       bio_p2:
-        'Saya sangat peduli terhadap pengalaman developer, performa aplikasi, dan eksekusi yang sempurna. Ketika tidak coding, saya menjelajahi design system baru atau berkontribusi pada open source.',
+        'Berkembang dari pengembangan web dasar saat magang di agency hingga membangun aplikasi modular yang type-safe secara mandiri untuk klien freelance. Terampil dalam menulis komponen kode yang bersih dan reusable, melakukan code review, dan memastikan kompatibilitas lintas browser.',
       bio_p3:
-        'Saat ini berfokus pada Angular v21 Signals, arsitektur Zoneless, dan membuat antarmuka pengguna yang luar biasa.',
+        'Terbukti mampu bekerja secara mandiri di lingkungan remote-first dengan komunikasi tertulis yang kuat dan pengiriman yang konsisten tepat waktu.',
       terminal_title: 'DNA Teknis',
     },
     projects: {
@@ -129,13 +135,19 @@ export const translations = {
       heading: 'MARI BANGUN SESUATU YANG HEBAT.',
       subheading: 'Terbuka untuk peluang dan kolaborasi.',
       cta_email: 'Kirim Email',
+      cta_whatsapp: 'Chat WhatsApp',
       cta_linkedin: 'Terhubung di LinkedIn',
     },
     footer: {
-      tagline: 'Membangun web, satu komponen dalam satu waktu.',
+      tagline: 'Dev dari Yogyakarta. Ditenagai kopi. Kirim kode yang bersih.',
       rights: 'Seluruh hak dilindungi.',
       nav_title: 'Navigasi',
       built_with: 'Dibuat Dengan',
+      currently: {
+        title: 'SAAT INI',
+        status: 'Terbuka untuk pekerjaan & kolaborasi',
+        location: 'Yogyakarta, ID (GMT+7)',
+      },
     },
   },
 };

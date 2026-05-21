@@ -1,51 +1,63 @@
 import {
+  ChangeDetectionStrategy,
   Component,
+  OnDestroy,
+  OnInit,
   inject,
   signal,
-  OnInit,
-  OnDestroy,
-  ElementRef,
-  viewChild,
-  ChangeDetectionStrategy,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { I18nService } from '../../services/i18n.service';
+import { RevealDirective } from '../../directives/reveal.directive';
 
 const TERMINAL_CONTENT = `{
   "name": "Tegar Bayu Saputra",
-  "role": "Front-End Engineer",
+  "role": "Frontend Developer",
   "location": "Yogyakarta, Indonesia",
+  "links": {
+    "email": "tegarbayusaputraa@gmail.com",
+    "github": "github.com/tegarbayusaputra",
+    "linkedin": "linkedin.com/in/tegarbayusaputra"
+  },
   "stack": {
-    "primary": ["Angular 21", "TypeScript", "Laravel", "PHP", "MySQL"],
+    "frontend": ["Angular", "React", "TypeScript", "HTML5", "CSS3"],
+    "backend": ["PHP", "Laravel", "MySQL"],
     "styling": ["Tailwind CSS", "SCSS", "Bootstrap"],
     "state": ["Signals", "RxJS"],
-    "tools": ["Git", "Figma", "VS Code", "Postman"]
+    "tools": ["Git", "GitHub", "Figma", "VS Code", "Postman", "Vite", "Composer", "Angular CLI"]
   },
-  "architecture": [
-    "Zoneless Angular",
-    "Standalone Components",
-    "Signal-based Reactivity",
-    "Component-based Architecture",
-    "REST API",
-    "Responsive Design",
-    "Web Performance Optimization"
+  "practices": [
+    "Type-safe & Modular Architecture",
+    "Reusable Component Design",
+    "Code Reviews & Cross-browser Compat.",
+    "RESTful API Integration",
+    "Responsive Design & Accessibility (a11y)",
+    "Remote-First & Autonomous Work",
+    "On-time Delivery"
   ],
-  "education": "Informatics Engineering",
-  "hobbies": ["UI Design", "Open Source"],
+  "experience": [
+    "Agency Internship (foundational web dev)",
+    "Freelance Clients (scalable production apps)"
+  ],
+  "education": "Computer and Network Engineering - SMK N 1 Tempel",
   "status": "Available for hire ✅"
 }`;
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RevealDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <section id="about" class="section-padding bg-gray-200">
-      <div class="max-w-7xl mx-auto">
+    <section id="about" class="section-shell section-shell-left section-padding bg-gray-200">
+      <div class="section-wordmark right-4 top-10 hidden text-[5rem] md:block md:text-[8rem] lg:text-[10rem]">
+        ABOUT<br/>CODE
+      </div>
 
+      <div class="max-w-7xl mx-auto">
         <!-- Section Header -->
-        <div class="mb-12 md:mb-16">
+        <div appReveal="up" class="mb-12 md:mb-16">
+          <!-- <div class="section-stamp mb-5 w-max">Snowy Blueprint</div> -->
           <span class="section-label">{{ i18n.t()['about']['label'] }}</span>
           <h2 class="section-heading mt-3" [innerHTML]="i18n.t()['about']['heading'].replace('\\n', '<br/>')">
           </h2>
@@ -55,7 +67,7 @@ const TERMINAL_CONTENT = `{
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
           <!-- LEFT: Bio -->
-          <div class="space-y-8">
+          <div appReveal="left" [revealDelay]="100" class="space-y-8">
             <!-- Bio text -->
             <div class="space-y-5">
               <p class="font-body text-ink-muted text-lg leading-relaxed">
@@ -71,8 +83,12 @@ const TERMINAL_CONTENT = `{
 
             <!-- Highlight cards -->
             <div class="grid grid-cols-2 gap-4">
-              <ng-container *ngFor="let card of highlightCards">
-                <div class="border border-border rounded-xl p-5 bg-white hover:border-electric transition-colors">
+              <ng-container *ngFor="let card of highlightCards; let i = index">
+                <div
+                  appReveal="zoom"
+                  [revealDelay]="160 + i * 80"
+                  class="border border-border rounded-xl p-5 bg-white hover:border-electric transition-colors"
+                >
                   <div class="text-2xl mb-2">{{ card.icon }}</div>
                   <div class="font-body font-bold text-ink text-sm">{{ card.title }}</div>
                   <div class="font-body text-xs text-ink-subtle mt-0.5">{{ card.subtitle }}</div>
@@ -82,14 +98,14 @@ const TERMINAL_CONTENT = `{
 
             <!-- Angular badge strip -->
             <div class="flex flex-wrap gap-2 pt-2">
-              <ng-container *ngFor="let badge of angularBadges">
-                <span class="tech-badge">{{ badge }}</span>
+              <ng-container *ngFor="let badge of angularBadges; let i = index">
+                <span appReveal="soft" [revealDelay]="260 + i * 45" class="tech-badge">{{ badge }}</span>
               </ng-container>
             </div>
           </div>
 
           <!-- RIGHT: Terminal -->
-          <div class="terminal-window shadow-brutal-lg">
+          <div appReveal="right" [revealDelay]="180" class="terminal-window shadow-brutal-lg">
             <!-- Terminal title bar -->
             <div class="terminal-bar">
               <div class="terminal-dot bg-red-500/80"></div>
@@ -127,15 +143,15 @@ export class About implements OnInit, OnDestroy {
   private currentIndex = 0;
 
   highlightCards = [
-    { icon: '⚡', title: 'Angular 21', subtitle: 'Zoneless + Signals' },
-    { icon: '🎨', title: 'UI/UX Focus', subtitle: 'Pixel-perfect design' },
-    { icon: '🚀', title: 'Performance', subtitle: 'Core Web Vitals' },
-    { icon: '🌐', title: 'Open Source', subtitle: 'Community contributor' },
+    { icon: '⚡', title: 'Frontend', subtitle: 'Angular · React · TypeScript' },
+    { icon: '🛠️', title: 'Full Stack', subtitle: 'Laravel · PHP · MySQL' },
+    { icon: '🚀', title: 'Freelance', subtitle: 'Production-ready delivery' },
+    { icon: '🌐', title: 'Remote-First', subtitle: 'Autonomous & reliable' },
   ];
 
   angularBadges = [
-    'Angular 21', 'TypeScript', 'RxJS', 'Signals', 'Tailwind CSS',
-    'SCSS', 'Git', 'REST API', 'Figma',
+    'Angular', 'React', 'TypeScript', 'PHP', 'Laravel',
+    'MySQL', 'RxJS', 'Tailwind CSS', 'Git', 'REST API',
   ];
 
   ngOnInit(): void {

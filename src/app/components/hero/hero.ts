@@ -1,26 +1,27 @@
-import { Component, inject, ChangeDetectionStrategy, signal, OnInit, OnDestroy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { I18nService } from '../../services/i18n.service';
+import { RevealDirective } from '../../directives/reveal.directive';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RevealDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <section
       id="home"
-      class="relative min-h-screen bg-snow flex flex-col items-center justify-center overflow-hidden pt-32 pb-20"
+      class="relative min-h-screen bg-snow flex flex-col items-center justify-start md:justify-center overflow-hidden pt-32 pb-20"
     >
       <!-- Top banner text -->
-      <div class="absolute top-24 left-0 w-full text-center z-0">
+      <div appReveal="down" [revealDelay]="80" class="absolute top-24 left-0 w-full text-center z-0">
         <span class="font-display italic text-ink text-2xl md:text-5xl tracking-tight opacity-90 uppercase">
           Web Developer
         </span>
       </div>
 
       <!-- Rotating Status Badge -->
-      <div class="absolute top-32 right-12 md:top-48 md:right-24 z-20 hidden sm:block">
+      <div appReveal="zoom" [revealDelay]="200" class="absolute top-32 right-12 md:top-48 md:right-24 z-20 hidden sm:block">
         <div class="relative w-24 h-24 md:w-32 md:h-32">
           <div class="absolute inset-0 animate-spin-slow">
             <svg viewBox="0 0 100 100" class="w-full h-full">
@@ -41,16 +42,22 @@ import { I18nService } from '../../services/i18n.service';
       <!-- MAIN MASSIVE TEXT LAYER (Background-ish but visible) -->
       <div class="relative z-0 w-full max-w-7xl mx-auto px-4 flex flex-col items-center text-center">
         <h1
+          appReveal="up"
+          [revealDelay]="120"
           class="font-body font-black text-ink leading-[0.85] md:leading-[0.8] tracking-tighter select-none whitespace-nowrap pointer-events-none text-6xl sm:text-8xl md:text-[12rem] lg:text-[15rem]"
         >
           I'M TEGAR.
         </h1>
         <h1
+          appReveal="up"
+          [revealDelay]="220"
           class="font-body font-black text-ink leading-[0.85] md:leading-[0.8] tracking-tighter select-none whitespace-nowrap pointer-events-none text-6xl sm:text-8xl md:text-[12rem] lg:text-[15rem]"
         >
           FRONT-END
         </h1>
         <h1
+          appReveal="up"
+          [revealDelay]="320"
           class="font-body font-black text-ink leading-[0.85] md:leading-[0.8] tracking-tighter select-none whitespace-nowrap pointer-events-none text-6xl sm:text-8xl md:text-[12rem] lg:text-[15rem]"
         >
           ENGINEER.
@@ -58,7 +65,7 @@ import { I18nService } from '../../services/i18n.service';
       </div>
 
       <!-- PROFILE PHOTO OVERLAP LAYER -->
-      <div class="absolute bottom-0 left-1/2 -translate-x-1/2 z-10 w-full max-w-[450px] md:max-w-500 h-[450px] md:h-[650px] group">
+      <div appReveal="soft" [revealDelay]="260" class="absolute bottom-0 left-1/2 -translate-x-1/2 z-10 w-full max-w-[450px] md:max-w-500 h-[450px] md:h-[650px] group">
         <div class="w-full h-full relative">
            <img
             src="assets/image01.png"
@@ -71,21 +78,21 @@ import { I18nService } from '../../services/i18n.service';
       </div>
 
       <!-- CTAs (Top Layer) -->
-      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-max z-20">
+      <div appReveal="up" [revealDelay]="420" class="absolute bottom-10 left-1/2 -translate-x-1/2 w-max z-20">
         <a href="#projects" class="bg-electric text-white font-body font-bold px-8 py-3.5 rounded-2xl shadow-brutal-blue transition-all hover:scale-105 active:scale-95" (click)="scrollTo('projects', $event)">
           VIEW WORK
         </a>
       </div>
 
       <!-- Decorative side text blocks -->
-      <div class="absolute left-10 bottom-10 max-w-[200px] hidden lg:block z-20">
+      <div appReveal="left" [revealDelay]="460" class="absolute left-10 bottom-10 max-w-[200px] hidden lg:block z-20">
         <div class="w-10 h-1 bg-ink mb-4"></div>
         <p class="font-body text-[11px] leading-relaxed text-ink uppercase font-bold tracking-wider">
           {{ i18n.t().hero.decorative_left }}
         </p>
       </div>
 
-      <div class="absolute right-10 bottom-10 max-w-[200px] hidden lg:block z-20 text-right">
+      <div appReveal="right" [revealDelay]="520" class="absolute right-10 bottom-10 max-w-[200px] hidden lg:block z-20 text-right">
         <div class="w-10 h-1 bg-ink mb-4 ml-auto"></div>
         <p class="font-body text-[11px] leading-relaxed text-ink uppercase font-bold tracking-wider">
           {{ i18n.t().hero.decorative_right }}

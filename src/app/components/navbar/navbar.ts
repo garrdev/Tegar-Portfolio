@@ -6,7 +6,9 @@ import {
   ChangeDetectionStrategy,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NavigationEnd, Router } from '@angular/router';
 import { I18nService } from '../../services/i18n.service';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-navbar',
@@ -110,6 +112,7 @@ import { I18nService } from '../../services/i18n.service';
 })
 export class Navbar {
   protected i18n = inject(I18nService);
+  private readonly router = inject(Router);
 
   scrolled = signal(false);
   activeSection = signal('home');
@@ -122,6 +125,15 @@ export class Navbar {
     { id: 'tools', key: 'tools' },
     { id: 'contact', key: 'contact' },
   ];
+
+  constructor() {
+    this.router.events
+      .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.mobileMenuOpen.set(false);
+        this.updateActiveSection();
+      });
+  }
 
   @HostListener('window:scroll', [])
   onScroll(): void {
@@ -141,8 +153,17 @@ export class Navbar {
     this.activeSection.set('home');
   }
 
-  scrollTo(id: string, event: Event): void {
+  async scrollTo(id: string, event: Event): Promise<void> {
     event.preventDefault();
+
+    if (this.router.url !== '/') {
+      await this.router.navigate(['/'], { fragment: id });
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+      }, 50);
+      return;
+    }
+
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   }
 }
