@@ -22,6 +22,10 @@ export const translations = {
       scroll_hint: 'Scroll to explore',
       decorative_left: 'Clean, reusable components. Type-safe code. Cross-browser compatibility.',
       decorative_right: 'From agency internship to freelance — delivering scalable apps with Angular, React & Laravel.',
+      badge: 'AVAILABLE FOR NEW PROJECTS',
+      description:
+        "Building UI with Angular for enterprise apps, React/Next.js for products that need SEO and speed. Need a backend too? Laravel's got that covered.",
+      cta_view_work: 'VIEW WORK',
     },
     about: {
       label: 'About Me',
@@ -67,7 +71,6 @@ export const translations = {
     },
     footer: {
       tagline: 'Yogyakarta-based dev. Coffee-fueled. Ships clean code.',
-      rights: 'All rights reserved.',
       nav_title: 'Navigation',
       built_with: 'Built With',
       currently: {
@@ -89,12 +92,16 @@ export const translations = {
       greeting: "AKU TEGAR.",
       role: 'FRONT-END ENGINEER',
       subtitle:
-        'Aku membangun antarmuka web yang skalabel dan siap produksi menggunakan Angular, React & TypeScript — dan bisa full-stack dengan Laravel & MySQL saat dibutuhkan.',
+        'Aku membangun antarmuka web yang skalabel dan siap produksi menggunakan Angular, React & TypeScript dan bisa full-stack dengan Laravel & MySQL saat dibutuhkan.',
       cta_projects: 'Lihat Proyek',
       cta_cv: 'Unduh CV',
       scroll_hint: 'Gulir untuk menjelajahi',
       decorative_left: 'Komponen bersih dan reusable. Kode type-safe. Kompatibilitas lintas browser.',
       decorative_right: 'Dari magang agency hingga freelance — menghadirkan aplikasi skalabel dengan Angular, React & Laravel.',
+      badge: 'TERSEDIA UNTUK PROYEK BARU',
+      description:
+        'Bangun UI pakai Angular buat aplikasi enterprise, React/Next.js buat produk yang butuh SEO & performa cepat. Kalau proyeknya perlu backend, Laravel jalan juga.',
+      cta_view_work: 'LIHAT KARYA',
     },
     about: {
       label: 'Tentang Saya',
@@ -140,7 +147,6 @@ export const translations = {
     },
     footer: {
       tagline: 'Dev dari Yogyakarta. Ditenagai kopi. Kirim kode yang bersih.',
-      rights: 'Seluruh hak dilindungi.',
       nav_title: 'Navigasi',
       built_with: 'Dibuat Dengan',
       currently: {

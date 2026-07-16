@@ -20,7 +20,10 @@ import { filter } from 'rxjs/operators';
       class="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-full max-w-4xl px-4"
     >
       <nav
-        class="flex items-center justify-between px-6 py-2.5 rounded-full border transition-all duration-500 bg-white shadow-[0_8px_30px_rgb(0,0,0,0.08)] border-border/40"
+        class="flex items-center justify-between px-6 py-2.5 rounded-full border transition-all duration-500"
+        [ngClass]="(scrolled() || mobileMenuOpen()) 
+          ? 'bg-white border-border/40 shadow-[0_8px_30px_rgba(0,0,0,0.08)]' 
+          : 'bg-white/0 border-border/40 shadow-none'"
       >
         <!-- Logo -->
         <a

@@ -195,7 +195,7 @@ export const PROJECTS: ProjectDetailData[] = [
     slug: 'eyegil-v1',
     title: 'EYEGIL V1',
     category: 'Digital Agency',
-    image: '/assets/Project/landing page eyegil V!.png',
+    image: '/assets/Project/landing page eyegil V1.png',
     stack: ['Laravel', 'Bootstrap', 'UI/UX Design'],
     liveUrl: 'https://eyegil.com/',
     period: '2024',

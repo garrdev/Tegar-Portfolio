@@ -125,7 +125,7 @@ import { RevealDirective } from '../../directives/reveal.directive';
         <!-- Bottom bar -->
         <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p class="font-mono text-xs text-white/40">
-            © {{ currentYear }} Tegar Bayu. {{ i18n.t()['footer']['rights'] }}
+            © 2026 Tegar Bayu. All rights reserved.
           </p>
           <p class="font-mono text-xs text-white/40">
             Handcrafted in Yogyakarta ☕

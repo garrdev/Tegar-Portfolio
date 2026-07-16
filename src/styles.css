@@ -158,6 +158,12 @@
     @apply inline-flex items-center rounded-full border border-electric/20 bg-white/90 px-4 py-2 font-mono text-[10px] font-bold uppercase tracking-[0.24em] text-electric;
     box-shadow: 0 18px 40px rgba(37, 99, 235, 0.08);
   }
+
+  .hero-badge {
+    @apply inline-flex items-center gap-2 rounded-full border border-electric/25 bg-white/80 px-4 py-2 font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-electric;
+    box-shadow: 0 4px 24px rgba(37, 99, 235, 0.08);
+    backdrop-filter: blur(6px);
+  }
 }
 
 @layer utilities {
