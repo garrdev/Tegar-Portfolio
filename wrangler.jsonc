@@ -1,11 +1,8 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "bayu-port0folio",
+  "name": "bayoe",
   "compatibility_date": "2026-11-17",
-  "observability": {
-    "enabled": true
-  },
   "assets": {
-    "directory": "dist/portfolio"
+    "directory": "dist/portfolio/browser",
+    "not_found_handling": "single-page-application"
   }
 }
